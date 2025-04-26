@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutricionista IA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nutricionista IA</h1>
+        <div class="chat-box">
+            {% for item in history %}
+                <div class="message user"><strong>Você:</strong> {{ item.question }}</div>
+                <div class="message bot"><strong>Nutricionista:</strong> {{ item.answer }}</div>
+            {% endfor %}
+        </div>
+        <form method="POST">
+            <input type="text" name="user_input" placeholder="Digite sua pergunta..." required autofocus>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        Programador Gabriel Sabino
+    </footer>
+</body>
+</html>
